@@ -14,45 +14,33 @@ $('button').on('click', function() {
 			for (var i = 0; i < results.length; i++) {
 
 				var animalDiv = $('<div/>');
-
+				//Add the ratings for the gifs above 
 				var p =$('<p/>');
-
 				p.text(results[i].rating);
 
 				var animalImage = $('<img/>');
-
-				animalImage.addClass('anImg')
-
+				animalImage.addClass('animalImg')
 				animalImage.attr('src', results[i].images.fixed_height.url);
-
 				animalImage.attr('data-still', results[i].images.fixed_height_still.url)
-
 				animalImage.attr('data-animate', results[i].images.fixed_height.url)
 
 				.attr('data-state', 'still');
-
 				animalDiv.append(p);
-
 				animalDiv.append(animalImage);
-
 				animalDiv.prependTo($('#gifs'));
 			}
 
-			$('.anImg').on('click', function() {
+			$('.aninmalImg').on('click', function() {
 		
 				var state = $(this).attr('data-state'); 
 				console.log(this);
 
-				if (state == 'still') {
-				
-				$(this).attr('src', $(this).data('animate'));
-				
+				if (state == 'still') {				
+				$(this).attr('src', $(this).data('animate'));				
 				$(this).attr('data-state', 'animate');
 
-				} else {
-						
-				$(this).attr('src', $(this).data('still'));
-				
+				} else {						
+				$(this).attr('src', $(this).data('still'));				
 				$(this).attr('data-state', 'still');
 				}      
 			});
@@ -91,22 +79,19 @@ var animals = [''];
 				p.text(results[i].rating);
 				//create the gif images
 				var animalImage = $('<img/>');
-				animalImage.addClass('anImg')
+				animalImage.addClass('animalImg')
 				animalImage.attr('src', results[i].images.fixed_height_still.url);
 				animalImage.attr('data-still', results[i].images.fixed_height_still.url)
 
 				animalImage.attr('data-animate', results[i].images.fixed_height.url)
 
 				.attr('data-state', 'still');
-
 				animalDiv.append(p); 
-
 				animalDiv.append(animalImage);
-
 				animalDiv.prependTo($('#gifs'));
 			}
 
-			$('.anImg').on('click', function() {
+			$('.aninmalImg').on('click', function() {
 		
 				var state = $(this).attr('data-state'); 
 				console.log(this);
@@ -161,6 +146,7 @@ $('#gifs').on("click", "img", function() {
 		$(this).attr("data-state", "active");
 	}
 });
+//I could not make the whole "USE AN ARRAY in var TOPICS" to work for shit, so i just used data-name for the buttons rather than trying to use the index values of some array, it seems much better
 // var topics = [
 // 	"lol cats",
 // 	"Spongebob",
