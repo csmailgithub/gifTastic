@@ -50,11 +50,11 @@ $('button').on('click', function() {
 var animals = [''];
 
 	// creates buttons and animates
-	$('#theButton').on('click', function(){
+	$('#MakeGIFButton').on('click', function(){
 		var animalButton = $("#gif-input").val();
 		//adds the new animal
 
-		var newButton = $("<button/>").addClass( "btn btn-info animal").attr('data-name',animalButton).html(animalButton).css({'margin': '5px'});
+		var newButton = $("<button/>").addClass( "btn btn-info animal").attr('data-name',animalButton).html(animalButton);
 		
 		$("#animalsbuttons").append(newButton);
 			console.log("Work");
