@@ -16,7 +16,7 @@ $('button').on('click', function() {
 				var animalDiv = $('<div/>');
 				//Add the ratings for the gifs above 
 				var p =$('<p/>');
-				p.text(results[i].rating);
+				p.text("Rating: " + results[i].rating);
 
 				var animalImage = $('<img/>');
 				animalImage.addClass('animalImg')
@@ -76,7 +76,7 @@ var animals = [''];
 				var animalDiv = $('<div/>');
 				//Add the ratings for the gifs above 
 				var p =$('<p/>');
-				p.text(results[i].rating);
+				p.text("Rating: " + results[i].rating);
 				//create the gif images
 				var animalImage = $('<img/>');
 				animalImage.addClass('animalImg')
@@ -184,9 +184,6 @@ $('#inputForm').keypress(function(e) {
       
     }
 });
-
-
-
 	
 // empty gif image area
 $('#emptyGifs').click(function() {
