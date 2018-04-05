@@ -7,9 +7,7 @@ $('button').on('click', function() {
 		method: 'GET'
 	})
 		.done(function(response) {
-
-
-			console.log(response)
+		console.log(response)
 
 			var results = response.data;
 
@@ -88,24 +86,20 @@ var animals = [''];
 			for (var i = 0; i < results.length; i++) {
 
 				var animalDiv = $('<div/>');
-
+				//Add the ratings for the gifs above 
 				var p =$('<p/>');
-
 				p.text(results[i].rating);
-
+				//create the gif images
 				var animalImage = $('<img/>');
-
 				animalImage.addClass('anImg')
-
 				animalImage.attr('src', results[i].images.fixed_height_still.url);
-
 				animalImage.attr('data-still', results[i].images.fixed_height_still.url)
 
 				animalImage.attr('data-animate', results[i].images.fixed_height.url)
 
 				.attr('data-state', 'still');
 
-				animalDiv.append(p);
+				animalDiv.append(p); 
 
 				animalDiv.append(animalImage);
 
@@ -118,15 +112,11 @@ var animals = [''];
 				console.log(this);
 
 				if (state == 'still') {
-				
 				$(this).attr('src', $(this).data('animate'));
-				
 				$(this).attr('data-state', 'animate');
 
 				} else {
-						
 				$(this).attr('src', $(this).data('still'));
-				
 				$(this).attr('data-state', 'still');
 				}      
 			});
@@ -135,31 +125,6 @@ var animals = [''];
 		$("#gif-input").val("");
 		return false;
 	})
-// populate top 5 Trending Gifs as buttons to screen
-
-var trending = "https://api.giphy.com/v1/gifs/trending?&api_key=d7b7211e027547b09b92844a2907e598&limit=10&rating";
-
-$.ajax({
-	url: trending,
-	type: 'GET',
-})
-.done(function(response) {
-	console.log(response);
-	for (var i = 0; i < response.data.length - 5; i++) {
-		
-		var button = $("<div class='btn btn-info btn-block'>");
-		button.attr({
-			"data-still": response.data[i].images.downsized_still.url,
-			"data-active": response.data[i].images.downsized.url,
-			"data-state": "still"
-		});
-
-		button.html([i+1]);
-		$('#buttons').append(button);
-	}
-})
-
-
 $('#buttons').on("click", "div", function() {
 
 	var state = $(this).attr("data-state");
