@@ -146,39 +146,7 @@ $('#gifs').on("click", "img", function() {
 		$(this).attr("data-state", "active");
 	}
 });
-//I could not make the whole "USE AN ARRAY in var TOPICS" to work for shit, so i just used data-name for the buttons rather than trying to use the index values of some array, it seems much better
-// var topics = [
-// 	"lol cats",
-// 	"Spongebob",
-// ];
 
-//$("#topicButtons").keypress(function(t) {
-			
-	//		if (t.which === 10){
-
-	//			var topicsURL = "https://api.giphy.com/v1/gifs/search?q=" + topics[i] + "&api_key=d7b7211e027547b09b92844a2907e598&limit=10&rating";
-	//			$.ajax({
-	//			url: topicsURL,
-	//			type: 'GET',
-	//			})
-	//			.done(function(response) {
-	//				console.log(response);
-	//				for (var i = 0; i < response.data.length - 5; i++) {
-	//					
-	//					var button = $("<div class='btn btn-info btn-block'>");
-	//					button.attr({
-	//						"data-still": response.data[i].images.downsized_still.url,
-	//						"data-active": response.data[i].images.downsized.url,
-	//						"data-state": "still"
-	//					});
-	//			
-	//					button.html([i+1]);
-	//					$('#topicButtons').append(button);
-	//				}
-	//			})
-	//		}
-			
-	//	})
 $('#inputForm').keypress(function(e) {
 
     if (e.which === 13) {
